@@ -1,0 +1,19 @@
+<!-- Loops over each object in the users array -->
+<div>
+{{#each users as |users| }}
+<div class="row mb-4 project">
+  
+  <div class="col-md-2">
+  </div>
+
+  <div class="col-md-1">
+    <img src="{{users.profile_picture}}" width="60">
+  </div>
+
+  <div class="col-md-6">
+    <h2><a href="http://localhost:5001/profile/{{users.user_id}}">{{users.user_name}}</a></h2> <h6>{{bio}}</h6>
+  </div>
+  
+</div>
+{{/each}}
+</div>

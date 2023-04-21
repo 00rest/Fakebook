@@ -1,0 +1,56 @@
+[
+  {
+    "user_id": 1,
+    "user_name": "Samantha",
+    "profile_picture": "https://avatars.githubusercontent.com/u/115661869?v=4",
+    "hometown": "Somewhere, NJ",
+    "birthday": "4/11/2023",
+    "email": "samantha@hotmail.com",
+    "password": "password12345",
+    "bio": "I like getting my nails done and I love my kids",
+    "theme": "no-card"
+  },
+  {
+    "user_id": 2,
+    "user_name": "Jordan",
+    "profile_picture": "https://avatars.githubusercontent.com/u/119983090?v=4",
+    "hometown": "Somewhere, NJ",
+    "birthday": "4/11/2023",
+    "email": "jordan@hotmail.com",
+    "password": "password12345",
+    "bio": "I'm perfect all arround"
+  },
+  {
+    "user_id": 3,
+    "user_name": "0rest",
+    "profile_picture": "https://avatars.githubusercontent.com/u/119826790?v=4",
+    "hometown": "Somewhere, NJ",
+    "birthday": "4/11/2023",
+    "email": "0rest@hotmail.com",
+    "password": "password12345",
+    "bio": "I'm always tired :/",
+    "theme": "card"
+  },
+  {
+    "user_id": 4,
+    "user_name": "Steeven",
+    "profile_picture": "https://avatars.githubusercontent.com/u/108702715?v=4",
+    "hometown": "Somewhere, NJ",
+    "birthday": "4/11/2023",
+    "email": "steeven@hotmail.com",
+    "password": "password12345",
+    "bio": "I take good profile pictures"
+  },
+  {
+    "user_id": 5,
+    "user_name": "Josue",
+    "profile_picture": "https://avatars.githubusercontent.com/u/120228686?v=4",
+    "hometown": "Somewhere, NJ",
+    "birthday": "4/11/2023",
+    "email": "josue@hotmail.com",
+    "password": "password12345",
+    "bio": "I love to party ;)"
+  }
+]
+
+

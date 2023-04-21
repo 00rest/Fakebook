@@ -1,0 +1,44 @@
+[
+    {
+        "follower_id": 1,
+        "followee_id": 2,
+        "followee_name": "Jordan",
+        "profile_picture": "https://avatars.githubusercontent.com/u/119983090?v=4"
+    },
+    {
+        "follower_id": 1,
+        "followee_id": 3,
+        "followee_name": "0rest",
+        "profile_picture": "https://avatars.githubusercontent.com/u/119826790?v=4"
+    },
+    {
+        "follower_id": 1,
+        "followee_id": 4,
+        "followee_name": "Steeven",
+        "profile_picture": "https://avatars.githubusercontent.com/u/108702715?v=4"
+    },
+    {
+        "follower_id": 1,
+        "followee_id": 5,
+        "followee_name": "Josue",
+        "profile_picture": "https://avatars.githubusercontent.com/u/120228686?v=4"
+    },
+    {
+        "follower_id": 2,
+        "followee_id": 1,
+        "followee_name": "Samantha",
+        "profile_picture": "https://avatars.githubusercontent.com/u/115661869?v=4"
+    },
+    {
+        "follower_id": 2,
+        "followee_id": 3,
+        "followee_name": "0rest",
+        "profile_picture": "https://avatars.githubusercontent.com/u/119826790?v=4"
+    },
+    {
+        "follower_id": 3,
+        "followee_id": 1,
+        "followee_name": "Samantha",
+        "profile_picture": "https://avatars.githubusercontent.com/u/115661869?v=4"
+    }
+]

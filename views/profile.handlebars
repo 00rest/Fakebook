@@ -1,0 +1,137 @@
+<div class="container ">
+
+  <div class="profile-header row {{theme}}">
+
+    <div class="col-md-3">
+      <img src="{{profile_picture}}" width="200" alt="Profile Image">
+    </div>
+
+    <div class="col-md-9 profile">
+      <h3> {{user_name}}'s profile {{#if owner}}<span id="this-is-you">(this is you)</span>{{/if}}</h3>
+      <br>
+      <h6 class="bio-space">Hi, {{bio}}<h6>
+      <h6>Birthday: {{format_date birthday}}</h6>
+      <h6>Hometown: {{hometown}}</h6>
+      <h6>email: {{email}}</h6>
+      <br>
+      <div class="form-group">
+        {{#if followBtn}}      
+          <button type="submit" class="btn btn-primary" onclick="followingHandler({{userInfo}})" id="follow">Follow {{user_name}}</button>
+        {{/if}}
+        <button type="submit" class="btn btn-primary" id="all-users">All users</button>
+      </div>
+    </div>
+
+  </div>
+
+
+  {{#if followings.length}}
+    <div class="col-md-12 post-list {{theme}}">
+      <h4>Your fake friends:</h4>
+      <br>
+      <div class="row">
+        {{#each followings as |following|}}
+          <div class="col-md-2 fake-friends">
+            <h6>
+              <img src="{{profile_picture}}" width="40"> 
+              <a class="friend-text" href="http://localhost:5001/profile/{{followee_id}}"> {{ followee_name }}</a>
+            </h6>
+          </div>
+        {{/each}}
+      </div>    
+    </div>
+  {{/if}}
+
+  
+  {{#if owner}}
+    {{!-- New post form --}}
+    <form class="form new-post-form {{theme}}">
+      <h3>Create a New Post:</h3>
+      <div class="form-group">
+        <label for="project-desc">What's on your mind...:</label>
+        <textarea class="form-input" id="post-desc" name="name"></textarea>
+      
+        {{!-- New post button --}}
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Post</button>
+        </div>    
+      
+      </div>
+    </form>
+  {{/if}}
+
+  {{!-- Shows Posts if they exist--}}
+  {{#if posts.length}}
+   
+    <h3 class="{{theme}}">Recent Posts:</h3>
+    {{#each posts as |post|}}
+      <div class="post-style {{...theme}}">
+              <div class="post-style row">
+                <div class="post-style col-md-10 ">
+                  <p class="post-head">{{post.date_created}}</p>
+                  <h4>{{post.post_content}}</h4>
+                </div>
+
+                <div class="col-md-2 post-style">
+                  {{#if ...owner}}
+                    <button class="btn btn-sm btn-danger delete-button" onclick="delPostButtonHandler({{post.post_id}})" data-id="{{post.post_id}}">DELETE</button>
+                  {{/if}}
+                </div>
+              </div>
+
+              {{!-- Shows comment form--}}
+              <div class="post-style row">
+                <div class="col-md-2 "></div>
+                  
+                <form class="col-md-8 form new-comment-form ">
+                  <div class="form-group">
+                    <textarea class="form-input" id="comment-desc{{post.post_id}}" ></textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <span>
+                      <button type="button" class="btn btn-primary" onclick="newCommentHandler({{post.post_id}})">Comment</button> 
+                      <button type="button" class="btn btn-primary" onclick="newLikeHandler({{post.post_id}})" id="like-button-{{post.post_id}}">Like</button>
+                      <button type="button" class="btn btn-primary" onclick="DislikeHandler({{post.post_id}})" id="dislike-button-{{post.post_id}}">Dislike</button>
+                      Likes <span id="likes{{post.post_id}}">{{post.post_likes}}</span> 
+                      </span>
+                    </span>
+                  </div>
+                </form>
+
+                <div class="col-md-2 "></div>
+
+                {{!--Shows each comment if they exist--}}
+                {{#if comments.length}}
+                  {{#each comments as |comment|}}
+                    <div class="col-md-2"></div>
+                    
+                    {{!-- Comment text --}}
+                    <div class="col-md-8 " >
+                      <p class="comment-head">{{date_created}}</p>
+                      <h5>{{comment_content}}</h5>
+                      <h6 class="text-right"><a class="friend-text" href="http://localhost:5001/profile/{{user_id}}">- {{user.user_name}}</a></h6>
+                    </div>
+
+                    {{!-- Comment delete button --}}
+                    <div class="col-md-2 ">
+                      {{#if comment_owner}}
+                        <button class="btn btn-sm btn-danger delete-button" onclick="delCommentButtonHandler({{comment.comment_id}})" data-id="{{comment.comment_id}}">Delete</button>
+                      {{/if}}
+                    </div>
+                  {{/each}}
+                {{/if}}
+              </div>           
+                         
+      </div>     
+    {{/each}}
+  {{/if}}
+
+</div>
+
+
+<script src="../js/friends.js"></script>
+<script src="../js/post.js"></script>
+
+
+

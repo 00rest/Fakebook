@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    padding: 20px;
+    background: #f1f1f1;
+  }
+  
+  .title {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+  }
+  .profile-nav {
+    float: right;
+    width: 75%;
+  }
+  
+  .left-column {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+  }
+  
+  .profile-img {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+  }
+  
+ 
+  .card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .column {
+    float: left;
+    width: 33.33%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .center {
+    margin: auto;
+    width: 100%;
+    border: 3px solid rgb(96, 95, 95);
+    padding: 10px;
+  }
+
+  .post-style {
+    padding: 8px;
+  }
