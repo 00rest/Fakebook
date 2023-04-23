@@ -15,10 +15,6 @@ User.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
-    //   references: {
-    //     model: 'following',
-    //     key: 'follower_id',
-    // },
     },
     user_name: {
       type: DataTypes.STRING,

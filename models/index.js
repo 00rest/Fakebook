@@ -36,35 +36,9 @@ Comment.belongsTo(User, {
 });
 //----------------------
 
-//User owns Following and only wishes for this to go both ways...
-User.hasMany(Following, {
-  foreignKey: 'follower_id',
-  onDelete: 'CASCADE'
-});
-
-Following.belongsTo( User, {
-  foreignKey: 'follower_id'
-});
-
-
-
-
-
-// User.belongsToMany(User, { through: Following, as: 'follower_id'} );
-
-// User.belongsToMany(User, { through: Following, as: 'followee_id'} );
-
-
-
-
-
-// Following.hasOne(User, {
-//   foreignKey: 'user_id'
-// });
-
-// User.belongsToMany(Following, {through: Following, as: 'new_followee_id'});
-
-
+//User connected to User through Following
+User.belongsToMany(User, { as: 'Followees',  through: Following });
+//----------------------
 
 
 module.exports = { User, Post, Comment, Following };

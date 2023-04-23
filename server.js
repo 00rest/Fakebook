@@ -4,9 +4,6 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
-const { uniqueNamesGenerator, adjectives, colors, animals } = require('unique-names-generator');
-const randomName = uniqueNamesGenerator({ dictionaries: [adjectives, colors, animals] });
-console.log(randomName);
 
 const sequelize = require('./config/connection');
 

@@ -11,24 +11,20 @@ Following.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        follower_id: {
+
+        user_user_id: {
             type: DataTypes.INTEGER,
         },
-        followee_id: {
+
+        followee_user_id: {
             type: DataTypes.INTEGER,
         },
-        followee_name: {
-            type: DataTypes.STRING,
-        },
+        
         date_followed: {
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,
-        },
-        profile_picture: {
-            type: DataTypes.TEXT,
-            allowNull: true,
-        },
+        }
     },
     {
         sequelize,
@@ -38,5 +34,6 @@ Following.init(
         modelName: 'following',
     }
 );
+
 
 module.exports = Following;

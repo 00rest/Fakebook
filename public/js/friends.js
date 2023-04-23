@@ -12,13 +12,12 @@ const followingHandler = async (event) => {
     if (event) {
       const response = await fetch(`/follow`, {
         method: 'POST',
-        body: JSON.stringify({ followee_id: event.user_id, followee_name: event.user_name, profile_picture: event.profile_picture }),
+        body: JSON.stringify({ followee_user_id: event.user_id }),
         headers: { 'Content-Type': 'application/json' }
       });
   
       if (response.ok) {
-        let followee = await response.json();
-        alert(`${followee[0].followee_name} is followed`);
+        alert(`${event.user_name} is followed`);
       } else {
         alert('Failed to follow user');
       }

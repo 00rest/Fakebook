@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User, Comment, Following } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -23,8 +23,9 @@ router.get('/profile/:id', withAuth, (req, res) => {
         }
       },
       {
-        model: Following,
-        attributes: ['followee_id', 'followee_name', 'date_followed', 'profile_picture'],
+        model: User,
+        as: 'Followees',
+        attributes: ['user_id', 'user_name', 'profile_picture'],
         order: ['date_followed', 'DESC'],
       }
     ]
@@ -57,7 +58,6 @@ if(allUserData[0].user_id){
     .catch(err => {
       console.log(err);
       res.render('error', {error: 'no such user'})
-      // res.status(500).json(err);
     });
 
 });
