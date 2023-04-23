@@ -10,7 +10,7 @@
       <h3> {{user_name}}'s profile {{#if owner}}<span id="this-is-you">(this is you)</span>{{/if}}</h3>
       <br>
       <h6 class="bio-space">Hi, {{bio}}<h6>
-      <h6>Birthday: {{birthday}}</h6>
+      <h6>Birthday: {{format_date birthday}}</h6>
       <h6>Hometown: {{hometown}}</h6>
       <h6>email: {{email}}</h6>
       <br>
@@ -34,7 +34,7 @@
           <div class="col-md-2 fake-friends">
             <h6>
               <img src="{{profile_picture}}" width="40"> 
-              <a class="friend-text" href="http://localhost:5001/profile/{{user_id}}"> {{ user_name }}</a>
+              <a class="friend-text" href="/profile/{{user_id}}"> {{ user_name }}</a>
             </h6>
           </div>
         {{/each}}
@@ -110,7 +110,7 @@
                     <div class="col-md-8 " >
                       <p class="comment-head">{{date_created}}</p>
                       <h5>{{comment_content}}</h5>
-                      <h6 class="text-right"><a class="friend-text" href="http://localhost:5001/profile/{{user_id}}">- {{user.user_name}}</a></h6>
+                      <h6 class="text-right"><a class="friend-text" href="/profile/{{user_id}}">- {{user.user_name}}</a></h6>
                     </div>
 
                     {{!-- Comment delete button --}}
